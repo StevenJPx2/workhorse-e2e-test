@@ -2,13 +2,13 @@
 
 ## Getting Help
 
-If you run into a bug, have a question, or want to request a feature, please
-open an issue on the GitHub issue tracker:
+Open an issue on the GitHub issue tracker:
 
 **<https://github.com/StevenJPx2/workhorse-e2e-test/issues>**
 
-When filing an issue, please include:
+Please include a clear description, reproduction steps, and version info.
 
-- A clear description of the problem or question
-- Steps to reproduce (if reporting a bug)
-- Relevant version information
+## Security Issues
+
+Do **not** open a public issue for security vulnerabilities.
+Email **security@example.com** instead.
