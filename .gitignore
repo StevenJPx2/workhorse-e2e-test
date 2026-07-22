@@ -1,0 +1,18 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor swap/backup files
+*.swp
+*.swo
+*~
+\#*#
+.#*
+.vscode/
+.idea/
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
