@@ -1,0 +1,12 @@
+{
+  "name": "@stevenjpx2/toolkit",
+  "version": "0.3.0",
+  "description": "A small, dependency-free TypeScript utility toolkit: strings, arrays, objects, dates, validation, and async helpers.",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
