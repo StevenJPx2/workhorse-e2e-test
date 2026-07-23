@@ -1,5 +1,7 @@
 # Contributing to workhorse-e2e-test
 
+> hiiii 👋
+
 Thank you for your interest in contributing! This document explains what this repository is, how it is structured, and how you can help.
 
 ---
