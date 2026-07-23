@@ -5,6 +5,7 @@ export class CodedError extends Error {
     this.name = "CodedError";
   }
 }
+/** Error thrown when a requested resource cannot be found. */
 export class NotFoundError extends CodedError {
   constructor(what: string) { super("not_found", `${what} not found`); }
 }
