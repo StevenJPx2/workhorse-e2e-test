@@ -9,4 +9,17 @@ export async function retry<T>(fn: () => Promise<T>, times = 3): Promise<T> {
   }
   throw last;
 }
-// TODO: add a timeout wrapper
+/** Races `promise` against a timer of `ms` milliseconds.
+ * Resolves/rejects with the promise's result if it settles first;
+ * otherwise rejects with a descriptive Error. */
+export function timeout<T>(promise: Promise<T>, ms: number): Promise<T> {
+  return new Promise<T>((resolve, reject) => {
+    const timer = setTimeout(() => {
+      reject(new Error(`Timed out after ${ms}ms`));
+    }, ms);
+    promise.then(
+      (value) => { clearTimeout(timer); resolve(value); },
+      (err)   => { clearTimeout(timer); reject(err); },
+    );
+  });
+}
