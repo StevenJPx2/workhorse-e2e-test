@@ -9,4 +9,16 @@ export async function retry<T>(fn: () => Promise<T>, times = 3): Promise<T> {
   }
   throw last;
 }
-// TODO: add a timeout wrapper
+/** Rejects with an error if `promise` does not settle within `ms` milliseconds. */
+export function timeout<T>(promise: Promise<T>, ms: number): Promise<T> {
+  return new Promise<T>((resolve, reject) => {
+    const timer = setTimeout(
+      () => reject(new Error(`Promise timed out after ${ms} ms`)),
+      ms,
+    );
+    promise.then(
+      (value) => { clearTimeout(timer); resolve(value); },
+      (err)   => { clearTimeout(timer); reject(err); },
+    );
+  });
+}
