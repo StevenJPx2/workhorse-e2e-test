@@ -9,3 +9,11 @@ export function round(n: number, places = 0): number {
 export function sum(ns: number[]): number {
   return ns.reduce((a, b) => a + b, 0);
 }
+export function range(start: number, end: number): number[] {
+  if (start >= end) return [];
+  const result: number[] = [];
+  for (let i = start; i < end; i++) {
+    result.push(i);
+  }
+  return result;
+}
