@@ -1,4 +1,8 @@
+import { CodedError } from "./errors.ts";
+
 export function clamp(n: number, lo: number, hi: number): number {
+  if (lo > hi)
+    throw new CodedError("invalid_range", `clamp: lo (${lo}) must be ≤ hi (${hi})`);
   return Math.min(hi, Math.max(lo, n));
 }
 export function round(n: number, places = 0): number {
